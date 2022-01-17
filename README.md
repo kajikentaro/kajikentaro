@@ -3,14 +3,14 @@
 [Manaba-Plus](https://chrome.google.com/webstore/detail/manaba-plus/aeidkdokanbhoefbgaadaicdmggdeegf?hl=ja)  
 中央大学 Manaba で使える Chrome 拡張機能。「課題一覧」「レジュメ自動ダウンロード」「ドロップ提出」などの機能を追加
 
+[時間割マネージャー](https://ttmanager.kajindowsxp.com/)  
+時間割のレイアウトで予定を調整する Web サービス。サークルの学期初めにおすすめ。幹部の負担をなくします。
+
 [ES-Editor](https://es-editor.kajindowsxp.com/)  
 就活生のためのエントリーシートエディター。「バージョン管理」「検索」「タグ管理」「文字数カウント」などの機能を追加
 
 [ML-Reversi](https://kajindowsxp.com/ml-reversi/)  
 オセロ AI の API。譜面を POST で投げると最適な手を予測した座標が帰ってきます
-
-[時間割マネージャー](https://ttmanager.kajindowsxp.com/)  
-時間割のレイアウトで予定を調整する Web サービス。サークルの学期初めにおすすめ。幹部の負担をなくします。
 
 [Ubuntu LINE Bot](https://line.me/R/ti/p/%40114gaerp)  
 テキストを送ると、そのコマンドの bash 実行結果が返信される LINE 公式アカウント。用途は不明。Docker を使ってサンドボックス化。
