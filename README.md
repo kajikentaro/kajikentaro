@@ -1,4 +1,4 @@
-大学生です。就活です。[IT ブログ](https://kajindowsxp.com/)   書いてます。
+大学生です。就活です。
 
 [Manaba-Plus](https://chrome.google.com/webstore/detail/manaba-plus/aeidkdokanbhoefbgaadaicdmggdeegf?hl=ja)  
 中央大学 Manaba で使える Chrome 拡張機能。「課題一覧」「レジュメ自動ダウンロード」「ドロップ提出」などの機能を追加
