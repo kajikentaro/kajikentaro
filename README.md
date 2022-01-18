@@ -4,7 +4,7 @@
 [ 📖 時間割マネージャー](https://ttmanager.kajindowsxp.com/)  
 時間割のレイアウトで予定を調整する Web サービス。サークルの学期初めにおすすめ。幹部の負担をなくします。
 
-[ 📝 ES-Editor](https://es-editor.kajindowsxp.com/)  
+[ 📝 ES-Editor](https://es-editor.kajindowsxp.com/)(開発中)  
 就活生のためのエントリーシートエディター。「バージョン管理」「検索」「タグ管理」「文字数カウント」などの機能を追加
 
 [ ⚫ ML-Reversi](https://kajindowsxp.com/ml-reversi/)  
