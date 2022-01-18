@@ -17,7 +17,7 @@
 URL や文章を英単語 3 つに変換する Web サービス。連絡先を交換していなくても、英単語を 3 つ教えるだけで文書や URL のやり取りができます。
 
 [ 📸 QR Shot](https://kajindowsxp.com/qr-shot/)  
-画面に表示された QR コードをキャプチャして読み取る Windows アプリケーション。Zoom 越しに QR コードを見せられることありますよね？
+画面に表示された QR コードをキャプチャして読み取る Windowsアプリケーション。Zoom 越しに QR コードを見せられることありますよね？
 
 [ 🖊️ LANDMARK](https://kajindowsxp.com/landmark2/)  
-Excel を読み取ってを単語帳&クイズアプリ
+Excel を読み込んで使える、単語帳&クイズアプリ。Windowsアプリケーション
