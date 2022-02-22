@@ -1,0 +1,49 @@
+version: "3.2"
+
+services:
+  javafx:
+    container_name: javafx
+    build:
+      context: .
+      dockerfile: javafx.Dockerfile
+    tty: true
+    volumes:
+      - type: volume
+        source: work_volume
+        target: /root/work3
+    ports:
+      - "4121:80"
+
+  atcoder:
+    container_name: atcoder
+    build:
+      context: .
+      dockerfile: atcoder.Dockerfile
+    tty: true
+    volumes:
+      - type: volume
+        source: work_volume
+        target: /root/work3
+    working_dir: /root
+
+  tex:
+    image: paperist/alpine-texlive-ja
+    container_name: tex
+    tty: true
+    volumes:
+      - type: volume
+        source: work_volume
+        target: /root/work3
+
+  node:
+    image: node:12.22.1-alpine
+    container_name: node
+    tty: true
+    volumes:
+      - type: bind
+        source: C:/Users/aaa/Documents/manaba-plus
+        target: /root/manaba-plus/build
+
+volumes:
+  work_volume:
+  atcoder_volume:
