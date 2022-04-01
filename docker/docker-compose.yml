@@ -24,6 +24,9 @@ services:
       - type: volume
         source: work_volume
         target: /root/work3
+      - type: volume
+        source: atcoder_volume
+        target: /root/atcoder
     working_dir: /root
 
   tex:
