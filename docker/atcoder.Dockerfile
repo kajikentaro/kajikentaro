@@ -1,5 +1,5 @@
 # Ubuntuの公式コンテナを軸に環境構築
-FROM ubuntu
+FROM ubuntu:20.04
 
 # インタラクティブモードにならないようにする
 ARG DEBIAN_FRONTEND=noninteractive
