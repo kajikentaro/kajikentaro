@@ -10,7 +10,7 @@
 [ ⚫ ML-Reversi](https://kajindowsxp.com/ml-reversi/)  
 オセロ AI の API。譜面を POST で投げると最適な手を予測した座標が帰ってきます
 
-[ 💬 Ubuntu LINE Bot](https://line.me/R/ti/p/%40114gaerp)  
+[ 💬 Ubuntu LINE Bot](https://github.com/kajikentaro/line-ubuntu)  
 テキストを送ると、そのコマンドの bash 実行結果が返信される LINE 公式アカウント。用途は不明。Docker を使ってサンドボックス化。
 
 [ 📠 URL to Words](https://urltowords.kajindowsxp.com/)  
