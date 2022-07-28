@@ -15,10 +15,11 @@ services:
       - "4121:80"
 
   atcoder:
-    container_name: atcoder
-    build:
-      context: .
-      dockerfile: atcoder.Dockerfile
+    # container_name: atcoder
+    # build:
+    #   context: .
+    #   dockerfile: atcoder.Dockerfile
+    image: kajindowsxp/atcoder
     tty: true
     volumes:
       - type: volume
