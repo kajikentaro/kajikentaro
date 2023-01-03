@@ -32,7 +32,8 @@ services:
 
   tex:
     # image: paperist/texlive-ja:latest
-    image: nukopy/ubuntu-texlive-ja:latest
+    # image: nukopy/ubuntu-texlive-ja:latest
+    image: kakerukitahara/tex
     container_name: tex
     tty: true
     volumes:
