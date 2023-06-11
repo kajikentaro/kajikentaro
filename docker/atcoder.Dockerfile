@@ -10,9 +10,6 @@ ENV TZ=Asia/Tokyo
 RUN apt-get update && \
   apt-get install -y zsh time tzdata tree git curl
 
-# デフォルトシェルをZ shellにする
-RUN chsh -s /bin/zsh
-
 # C++, Python3, PyPy3の3つの環境想定
 RUN apt-get update && \
   apt-get install -y gcc-9 g++-9 python3.8 python3-pip pypy3 nodejs npm
@@ -34,7 +31,7 @@ RUN pip install numpy==1.18.2 && \
   pip install networkx==2.4
 
 # C++でAtCoder Library(ACL)を使えるようにする
-RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
+RUN git clone --depth 1 https://github.com/atcoder/ac-library.git /lib/ac-library
 ENV CPLUS_INCLUDE_PATH /lib/ac-library
 
 # Pythonでの競技プログラミング用データ構造をインストール
@@ -45,22 +42,12 @@ RUN pip install git+https://github.com/hinamimi/ac-library-python && \
 RUN pip install online-judge-tools==11.3.0
 RUN npm install -g atcoder-cli@2.1.1
 
-# atcoder-cliの設定
-RUN acc config-dir && \
-  acc config default-template python && \
-  acc config default-test-dirname-format test
-
 # AHC用のRustのinstall
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH $PATH:/home/root/.cargo/bin
 
 # 多倍長整数をインストール
-WORKDIR /root
-RUN apt install -y m4 wget
-RUN wget https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
-RUN tar -xvf gmp-6.1.2.tar.xz
-WORKDIR gmp-6.1.2
-RUN ./configure --enable-cxx && make && make check && make install
+RUN apt-get install -y libboost-all-dev
 
 # GDB をインストール
 RUN apt install -y gdb
@@ -70,3 +57,14 @@ RUN apt-get -y install locales-all
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:ja
 ENV LC_ALL ja_JP.UTF-8
+
+# atcoder-cliの設定
+RUN acc config default-template cpp
+RUN acc config default-test-dirname-format test
+COPY atcoder_template /tmp/atcoder_template
+RUN mv /tmp/atcoder_template $(acc config-dir)/cpp
+# run these commands before you start
+# $ acc login
+# $ oj login https://beta.atcoder.jp/
+
+CMD ["/bin/bash"]
