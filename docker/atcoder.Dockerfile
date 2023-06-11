@@ -63,6 +63,7 @@ RUN acc config default-template cpp
 RUN acc config default-test-dirname-format test
 COPY atcoder_template /tmp/atcoder_template
 RUN mv /tmp/atcoder_template $(acc config-dir)/cpp
+RUN echo "alias codea='CPP_FILES=\$(find ./*/main.cpp) && code \$CPP_FILES'" >> /root/.bashrc
 # run these commands before you start
 # $ acc login
 # $ oj login https://beta.atcoder.jp/
