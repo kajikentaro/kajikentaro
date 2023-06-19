@@ -1,13 +1,8 @@
-// Place your key bindings in this file to override the defaults
 [
+  // multi cursor
   {
     "key": "shift+alt+j",
     "command": "editor.action.insertCursorBelow",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+down",
-    "command": "-editor.action.insertCursorBelow",
     "when": "editorTextFocus"
   },
   {
@@ -15,20 +10,11 @@
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus"
   },
-  {
-    "key": "ctrl+alt+up",
-    "command": "-editor.action.insertCursorAbove",
-    "when": "editorTextFocus"
-  },
+  // move active window
   {
     "key": "ctrl+oem_1",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus"
-  },
-  {
-    "key": "alt+down",
-    "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
     "key": "ctrl+oem_1",
@@ -45,6 +31,7 @@
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus"
   },
+  // open new window
   {
     "key": "ctrl+t",
     "command": "workbench.action.newGroupRight",
@@ -55,20 +42,60 @@
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
+  // show hover message
   {
-    "key": "ctrl+shift+5",
-    "command": "-workbench.action.terminal.split",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "shift+alt+l",
+    "key": "ctrl+k h",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
   },
+  // go to next error
   {
-    "key": "ctrl+k ctrl+i",
-    "command": "-editor.action.showHover",
-    "when": "editorTextFocus"
+    "key": "shift+alt+h",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  // open terminal in active file
+  {
+    "key": "ctrl+k t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "open terminal with active file's parent directory",
+    "when": "!taskRunning"
+  },
+  {
+    "key": "ctrl+k t",
+    "command": "workbench.action.tasks.restartTask",
+    "args": "open terminal with active file's parent directory",
+    "when": "taskRunning"
+  },
+  // change active tab
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+    "when": "!activeEditorGroupEmpty && !terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+    "when": "!activeEditorGroupEmpty"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    "when": "!terminalFocus && !inQuickOpen"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    "when": "!activeEditorGroupEmpty"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   }
 ]
-

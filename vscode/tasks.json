@@ -1,0 +1,23 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "open terminal with active file's parent directory",
+      "type": "process",
+      "command": "bash",
+      "options": {
+        "cwd": "${workspaceFolder}/${relativeFileDirname}"
+      },
+      "presentation": {
+        "echo": false,
+        "focus": true,
+        "panel": "new",
+        "close": true,
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

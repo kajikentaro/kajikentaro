@@ -1,35 +1,22 @@
 {
+  "vim.camelCaseMotion.enable": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": ["ctrl+k", "y"],
-      "after": [":", "%", "y", "+", "enter"]
-    }
-  ],
-  "latex-workshop.latex.tools": [
-    {
-      "name": "my tex tool",
-      "command": "ptex2pdf",
-      "args": [
-        "-l",
-        "-shell-escape",
-        "-interaction=nonstopmode",
-        "-ot",
-        "\"-synctex=1 -file-line-error\"",
-        "%DOC%"
+      "before": [
+        "<leader>",
+        "y"
       ],
-      "env": {}
+      "after": [
+        ":",
+        "%",
+        "y",
+        "+",
+        "enter"
+      ]
     }
   ],
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "my tex recipe",
-      "tools": ["my tex tool"]
-    }
-  ],
-  "latex-workshop.latex.recipe.default": "my tex recipe",
-  "latex-workshop.view.pdf.viewer": "browser",
-  "markdown-pdf.margin.top": "2.5cm",
-  "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin: 0 1cm 0 auto \"> <p style=\"text-align:right; font-size:9px;\"><span class='date'></span><br>19D8104026J<br>可児憲太郎</p></div>",
+  "markdown-pdf.margin.top": "2cm",
+  "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin: 0 1cm 0 auto \"> <p style=\"text-align:right; font-size:9px;\"><span class='date'></span></div>",
   "markdown-pdf.margin.bottom": "1.5cm",
   "markdown-pdf.margin.left": "0.5cm",
   "markdown-pdf.margin.right": "0.5cm",
@@ -61,5 +48,9 @@
   // 保存時にフォーマットするように
   "editor.formatOnSave": true,
   // 自動的に未使用importを削除する
-  "editor.codeActionsOnSave": ["source.organizeImports"]
+  "editor.codeActionsOnSave": [
+    "source.organizeImports"
+  ],
+  // ターミナル貼り付け時の警告を削除
+  "terminal.integrated.enableMultiLinePasteWarning": false
 }
