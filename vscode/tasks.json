@@ -14,7 +14,7 @@
         "echo": false,
         "focus": true,
         "panel": "new",
-        "close": true,
+        "close": true
       },
       "isBackground": true,
       "problemMatcher": []

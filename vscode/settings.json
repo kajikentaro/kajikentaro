@@ -2,17 +2,8 @@
   "vim.camelCaseMotion.enable": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": [
-        "<leader>",
-        "y"
-      ],
-      "after": [
-        ":",
-        "%",
-        "y",
-        "+",
-        "enter"
-      ]
+      "before": ["<leader>", "y"],
+      "after": [":", "%", "y", "+", "enter"]
     }
   ],
   "markdown-pdf.margin.top": "2cm",
@@ -48,9 +39,7 @@
   // 保存時にフォーマットするように
   "editor.formatOnSave": true,
   // 自動的に未使用importを削除する
-  "editor.codeActionsOnSave": [
-    "source.organizeImports"
-  ],
+  "editor.codeActionsOnSave": ["source.organizeImports"],
   // ターミナル貼り付け時の警告を削除
   "terminal.integrated.enableMultiLinePasteWarning": false
 }
