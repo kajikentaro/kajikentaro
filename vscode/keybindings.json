@@ -24,7 +24,7 @@
   // open and focus terminal
   {
     "key": "ctrl+oem_7",
-    "command": "terminal.focus",
+    "command": "terminal.focus"
   },
   // close terminal and focus active editor
   {
@@ -138,5 +138,20 @@
   {
     "key": "ctrl+b",
     "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  // copy relative path
+  {
+    "key": "ctrl+k r",
+    "command": "copyRelativeFilePath"
+  },
+  {
+    "key": "ctrl+k ctrl+shift+c",
+    "command": "-copyRelativeFilePath",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+shift+c",
+    "command": "-copyRelativeFilePath",
+    "when": "!editorFocus"
   }
 ]
