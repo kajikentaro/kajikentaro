@@ -28,14 +28,8 @@
   },
   // close terminal and focus active editor
   {
-    "key": "ctrl+j",
-    "command": "workbench.action.togglePanel",
-    "when": "terminalIsOpen"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.togglePanel",
-    "when": "!terminalIsOpen"
+    "key": "ctrl+n",
+    "command": "workbench.action.togglePanel"
   },
   {
     "key": "ctrl+j",
