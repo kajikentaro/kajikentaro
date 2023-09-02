@@ -73,6 +73,24 @@ function cd_recent(){
 zle -N cd_recent
 bindkey "^o" cd_recent
 ```
+## .tmux.conf
+
+```
+# https://qiita.com/gatapon/items/c7cf549ebffe86599be9
+# vimのキーバインドでペインを移動する
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# コピーモードを設定する
+# コピーモードでvimキーバインドを使う
+setw -g mode-keys vi
+
+# 'v' で選択を始める
+bind -T copy-mode-vi v send -X begin-selection
+```
+
 
 # next.js のサーバーにアクセスできない問題
 
