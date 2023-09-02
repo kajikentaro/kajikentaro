@@ -53,7 +53,7 @@ function cd_target(){
 }
 
 zle -N cd_target
-bindkey "^j" cd_target
+bindkey "^l" cd_target
 
 
 function cd_recent(){
@@ -71,7 +71,7 @@ function cd_recent(){
 }
 
 zle -N cd_recent
-bindkey "^u" cd_recent
+bindkey "^o" cd_recent
 ```
 
 # next.js のサーバーにアクセスできない問題
