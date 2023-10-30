@@ -56,10 +56,12 @@ zle -N cd_target
 bindkey "^l" cd_target
 
 
-function cd_recent(){
+function cd_target(){
   d=$( \
-    z \
-    | awk '{print $2}' \
+    fdfind --type d -H \
+    -E .git \
+    -E node_modules \
+    -E .terragrunt-cache \
     | fzf )
 
   if [[ $d = "" ]]; then
