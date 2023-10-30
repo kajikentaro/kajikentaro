@@ -46,15 +46,9 @@
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
-  // show hover message
-  {
-    "key": "ctrl+k h",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
   // go to next error
   {
-    "key": "shift+alt+h",
+    "key": "ctrl+k e",
     "command": "editor.action.marker.next",
     "when": "editorFocus"
   },
@@ -92,28 +86,6 @@
     "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
     "when": "!terminalFocus && inEditorsPicker && inQuickOpen"
   },
-  // move source control
-  {
-    "key": "ctrl+shift+G",
-    "command": "list.focusDown",
-    "when": "listFocus"
-  },
-  {
-    "key": "ctrl+G",
-    "command": "list.focusUp",
-    "when": "listFocus"
-  },
-  // move exploler
-  {
-    "key": "ctrl+shift+E",
-    "command": "list.focusDown",
-    "when": "listFocus"
-  },
-  {
-    "key": "ctrl+E",
-    "command": "list.focusUp",
-    "when": "listFocus"
-  },
   //  open active file in explorer
   {
     "key": "ctrl+shift+e",
@@ -124,28 +96,25 @@
     "command": "-workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled"
   },
+  // open source control
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.scm.focus"
+  },
   // toggle sidebar
   {
     "key": "ctrl+h",
     "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
   },
   // copy relative path
   {
     "key": "ctrl+k r",
     "command": "copyRelativeFilePath"
   },
+  // enable ctrl + p when vim is active
   {
-    "key": "ctrl+k ctrl+shift+c",
-    "command": "-copyRelativeFilePath",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+k ctrl+shift+c",
-    "command": "-copyRelativeFilePath",
-    "when": "!editorFocus"
+    "key": "ctrl+p",
+    "command": "-extension.vim_ctrl+p",
+    "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
   }
 ]
