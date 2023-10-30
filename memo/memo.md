@@ -55,11 +55,10 @@ function cd_target(){
 zle -N cd_target
 bindkey "^l" cd_target
 
-
 function cd_recent(){
   d=$( \
     z \
-    | awk '{print $2}' \
+    | tac \
     | fzf )
 
   if [[ $d = "" ]]; then
