@@ -58,6 +58,7 @@ bindkey "^l" cd_target
 function cd_recent(){
   d=$( \
     z \
+    | awk '{print $2}' \
     | tac \
     | fzf )
 
