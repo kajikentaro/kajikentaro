@@ -76,7 +76,6 @@ bindkey "^o" cd_recent
 ## .tmux.conf
 
 ```
-# https://qiita.com/gatapon/items/c7cf549ebffe86599be9
 # vimのキーバインドでペインを移動する
 bind h select-pane -L
 bind j select-pane -D
@@ -89,6 +88,11 @@ setw -g mode-keys vi
 
 # 'v' で選択を始める
 bind -T copy-mode-vi v send -X begin-selection
+
+# clipboardを連携
+# sudo apt install xclip が必要
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
+
 ```
 
 
