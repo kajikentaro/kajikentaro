@@ -1,0 +1,158 @@
+#!/bin/bash
+##############################################
+# GIT
+##############################################
+# git
+alias gpoh='git push origin HEAD'
+alias gpoh!='git push origin HEAD -f'
+alias gpohn='git push origin HEAD --no-verify'
+alias gpohn!='git push origin HEAD --no-verify -f'
+
+# stage files which have code difference: $1.
+# eg)
+#     $ ga hogehoge-change-important
+function git-add(){
+        local FILES FILE;
+        FILES=$(git status -s | awk '{print $2}');
+        for FILE in $FILES; do
+                git diff $FILE  | grep $1 > /dev/null && echo $FILE && git add $FILE;
+  done
+}
+
+# eg)
+#     $ git-lfs-force 'foo/bar.*.png'
+function git-lfs-force(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+  git lfs ls-files -l | grep -E "$1" | awk '{print $1}' | xargs git lfs push origin --object-id
+}
+
+# list up files with specific changes
+# eg)
+#     $ diff-listup "todo"
+function diff-listup(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+
+  files=$(git diff HEAD^ --name-only)
+  for i in $(echo $files); do
+    if [ ! -f $i ]; then
+      continue
+    fi
+    git diff HEAD^ -U0 $i | grep + | grep $1 > /dev/null && echo $i
+  done
+}
+
+_complete_git_branch() {
+  local cur=${COMP_WORDS[COMP_CWORD]}
+  local branches=$(git branch -r | grep -v '\->' | sed 's/origin\///' | tr '\n' ' ')
+  COMPREPLY=( $(compgen -W "$branches" -- $cur) )
+}
+
+
+# eg)
+#     $ git-swap feature/swap-target
+function git-swap(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+
+  git branch swap/tmp
+  git reset --hard $1
+
+  git checkout $1
+  git reset --hard swap/tmp
+  git branch -d swap/tmp
+}
+complete -F _complete_git_branch git-swap
+
+# eg)
+#     $ checkout feature/checkout-target
+function checkout(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+
+  git branch -D $1 ; git fetch origin $1 && git checkout $1
+}
+complete -F _complete_git_branch checkout
+
+
+# eg)
+#     $ review feature/review-target
+function review(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+
+  git fetch origin $1 && git checkout origin/$1
+}
+complete -F _complete_git_branch review
+
+# eg)
+#     $ rebase feature/rebase-target
+function rebase(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+
+  git fetch origin $1 && git rebase origin/$1
+}
+complete -F _complete_git_branch rebase
+
+# eg)
+#     $ merge feature/merge-target
+function merge(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+
+  git fetch origin $1 && git merge origin/$1
+}
+complete -F _complete_git_branch merge
+
+function cpb(){
+  git branch --show-current | clipcopy
+}
+
+function cph(){
+  git rev-parse HEAD | clipcopy
+}
+
+##############################################
+# UTILITIES
+##############################################
+alias r='source ~/.zshrc'
+
+# copy the content of alias to clipboard
+function a(){
+  if [ "$1" = "" ]
+  then
+      echo "no argument"
+      return
+  fi
+  alias $1 | sed -Ez "s/.*?='(.*)'\n/\1/" | clipcopy
+}
+
+
+##############################################
+# APPLICATION
+##############################################
+# open staged files on vscode.
+function codea(){ git status -s -u | awk '{print $2}' | xargs code ;}
