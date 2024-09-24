@@ -37,12 +37,7 @@ function redraw-prompt() {
 }
 
 function cd_target(){
-  d=$( \
-    fdfind --type d -H \
-    -E .git \
-    -E node_modules \
-    -E .terragrunt-cache \
-    | fzf )
+  d=$(find -type d | fzf )
 
   if [[ $d = "" ]]; then
     return
