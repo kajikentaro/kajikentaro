@@ -17,10 +17,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sed -ie 's/plugins=(/plugins=(zsh-autosuggestions /' ~/.zshrc
 
-# powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc
-
 # z
 sed -ie 's/plugins=(/plugins=(z /' ~/.zshrc
 ```
