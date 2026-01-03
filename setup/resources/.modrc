@@ -3,10 +3,9 @@
 # GIT
 ##############################################
 # git
-alias gpoh='git push origin HEAD'
-alias gpoh!='git push origin HEAD -f'
-alias gpohn='git push origin HEAD --no-verify'
-alias gpohn!='git push origin HEAD --no-verify -f'
+alias ggpush!='git push origin HEAD -f'
+alias ggpushn='git push origin HEAD --no-verify'
+alias ggpushn!='git push origin HEAD --no-verify -f'
 
 # stage files which have code difference: $1.
 # eg)
